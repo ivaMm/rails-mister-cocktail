@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="row justify-content-sm-center">
+    <% if @cocktails.empty? %>
+      <h6 style="margin-top: 32px;">Sorry, there is nothing that matches: <span style="color: red;"><%= @query.upcase %></span> ! Please try another city.</h6>
+    <% else %>
+      <% if @query %>
+        <div class="container">
+          <div class="row justify-content-sm-center">
+            <h6 style="margin-top: 32px;">Here are results for your search: <span style="color: red;"><%= @query.upcase %></span></h6>
+          </div>
+        </div>
+      <% end %>
+      <% @cocktails.each do |cocktail| %>
+      <div class="card" style="width: 16rem; margin: 16px;">
+        <img src="https://www.thespruceeats.com/thmb/h4qUhChyp_ebqcZoQErJBP1ofds=/891x668/smart/filters:no_upscale()/mojito-5a8f339fba61770036ec61d8.jpg" class="card-img-top"/>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
