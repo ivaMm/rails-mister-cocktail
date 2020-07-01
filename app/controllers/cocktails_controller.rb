@@ -2,12 +2,6 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show]
   def index
     @cocktails = Cocktail.all
-    if params[:search].present?
-      @query = params[:search]
-      @cocktails = Cocktail.where("name LIKE ?", "%#{@query}%").order("created_at DESC")
-    else
-      @cocktails = Cocktail.all
-    end
   end
 
   def show
