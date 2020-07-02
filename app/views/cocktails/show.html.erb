@@ -12,6 +12,8 @@
   <% if @cocktail.reviews.empty? %>
   <p>No reviews yet, write one ↙️ </p>
   <% else %>
+  <hr>
+  <h3>Reviews:</h3>
   <% @cocktail.reviews.each do |review| %>
     <div class="row">
       <div class="col-sm-6">

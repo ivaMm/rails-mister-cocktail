@@ -14,9 +14,14 @@
   <body>
     <div class="navbar bg-light">
       <%= link_to 'Cocktails', cocktails_path %>
+      <div class="ml-auto flex">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search by name" aria-label="Search" value="<%= params[:query] %>">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
       <%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-outline-primary my-2 my-sm-0 ml-2" %>
-   </div>
-
+    </div>
    <%= yield %>
   </body>
 </html>

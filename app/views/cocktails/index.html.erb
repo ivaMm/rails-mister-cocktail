@@ -1,12 +1,24 @@
 <div class="container">
   <div class="row justify-content-sm-center">
-    <% @cocktails.each do |cocktail| %>
-      <div class="card" style="width: 16rem; margin: 16px;">
-        <img src="https://www.thespruceeats.com/thmb/h4qUhChyp_ebqcZoQErJBP1ofds=/891x668/smart/filters:no_upscale()/mojito-5a8f339fba61770036ec61d8.jpg" class="card-img-top"/>
-        <div class="card-body">
-          <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
+    <% if @cocktails.empty? %>
+      <h4>No results found for <strong><%= @query.upcase %></strong></h4>
+    <% else %>
+      <% if @query %>
+        <% @cocktails.count == 1 ? sg_pl= "cocktail" : sg_pl= "cocktails" %>
+        <div class="container">
+          <div class="row justify-content-sm-center">
+            <h4>We found <%= @cocktails.count %> <%= sg_pl %> for <strong><%= @query.upcase %></strong> out of <%= Cocktail.count %> cocktails</h4>
+          </div>
         </div>
-      </div>
+      <% end %>
+      <% @cocktails.each do |cocktail| %>
+        <div class="card" style="width: 16rem; margin: 16px;">
+          <img src="https://www.thespruceeats.com/thmb/h4qUhChyp_ebqcZoQErJBP1ofds=/891x668/smart/filters:no_upscale()/mojito-5a8f339fba61770036ec61d8.jpg" class="card-img-top"/>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
