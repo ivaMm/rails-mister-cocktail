@@ -1,23 +1,13 @@
 <div class="container">
   <div class="row justify-content-sm-center">
-    <% if @cocktails.empty? %>
-      <h4>No results found for <strong><%= @query.upcase %></strong></h4>
-    <% else %>
-      <% if @query %>
-        <% @cocktails.count == 1 ? sg_pl= "cocktail" : sg_pl= "cocktails" %>
-        <div class="container">
-          <div class="row justify-content-sm-center">
-            <h4>We found <%= @cocktails.count %> <%= sg_pl %> for <strong><%= @query.upcase %></strong> out of <%= Cocktail.count %> cocktails</h4>
-          </div>
-        </div>
-      <% end %>
+
+
       <% @cocktails.each do |cocktail| %>
         <div class="card" style="width: 16rem; margin: 16px;">
           <div class="card-body">
             <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
           </div>
         </div>
-      <% end %>
-    <% end %>
+
   </div>
 </div>
