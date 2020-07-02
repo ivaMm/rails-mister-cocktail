@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="col justify-content-sm-center">
+
+  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
   <h3><%= @cocktail.name %></h3>
   <% @cocktail.doses.each do |dose| %>
     <p>
@@ -27,4 +30,5 @@
   <% end %>
   <% end %>
   <%= link_to 'Add Review', new_cocktail_review_path(@cocktail) %>
+</div>
 </div>
