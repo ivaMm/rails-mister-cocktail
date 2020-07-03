@@ -1,5 +1,5 @@
-<div class="container">
-  <h1><%= @cocktail.name %></h1>
+<div class="container-form">
+  <h1><%= link_to @cocktail.name, cocktail_path(@cocktail) %></h1>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.association :ingredient, :collection => Ingredient.order(:name) %> <!-- case sensitive! -->
     <%= f.input :description %>

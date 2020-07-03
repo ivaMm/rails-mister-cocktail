@@ -1,5 +1,5 @@
-<div class="container">
-  <h3><%= @cocktail.name %> </h3>
+<div class="container-form">
+  <h3><%= link_to @cocktail.name, cocktail_path(@cocktail) %> </h3>
   <hr>
   <%= simple_form_for [@cocktail, @review] do |f| %>
     <%= f.input :content %>

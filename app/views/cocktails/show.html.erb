@@ -1,34 +1,29 @@
 <div class="container">
-  <div class="col justify-content-sm-center">
-
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-  <h3><%= @cocktail.name %></h3>
-  <% @cocktail.doses.each do |dose| %>
-    <p>
-    <%= dose.ingredient.name %> <%= dose.description %>
-    <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fa fa-trash destroy_dose"></i>
-    <% end %>
-    </p>
-  <% end %>
-  <%= link_to "Add dose",  new_cocktail_dose_path(@cocktail) %>
-  <% if @cocktail.reviews.empty? %>
-  <p>No reviews yet, write one ↙️ </p>
-  <% else %>
-  <hr>
-  <h3>Reviews:</h3>
-  <% @cocktail.reviews.each do |review| %>
-    <div class="row">
-      <div class="col-sm-6">
-        <%= review.content %>
-      </div>
-      <div class="col-sm-6 text-right">
-        <%= "⭐" * review.rating %>
+  <div class="row justify-content-sm-center">
+    <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+    </div>
+    <div class="card-show">
+      <div class="card-body">
+        <h3 class="card-title"><%= @cocktail.name %></h3>
+        <ul class="list-gruop">
+          <% @cocktail.doses.each do |dose| %>
+            <li> <%= dose.ingredient.name %> <%= dose.description %>
+            <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fa fa-trash destroy_dose"></i>
+            <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <%= link_to "Add dose",  new_cocktail_dose_path(@cocktail) %>
+        <hr>
+        <% if @cocktail.reviews.empty? %>
+          <p>No reviews yet, write one ↙️ </p>
+        <% else %>
+         <h4>Average rating:  <%= "⭐" * (Review.where(cocktail_id: @cocktail.id).average(:rating)).round %></h4>
+         <%= link_to "All Reviews", cocktail_reviews_path(@cocktail)%>
+        <% end %>
+        <%= link_to 'Add Review', new_cocktail_review_path(@cocktail) %>
       </div>
     </div>
-    <hr>
-  <% end %>
-  <% end %>
-  <%= link_to 'Add Review', new_cocktail_review_path(@cocktail) %>
-</div>
+  </div>
 </div>

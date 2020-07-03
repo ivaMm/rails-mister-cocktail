@@ -1,1 +1,68 @@
 // Specific CSS for your home-page
+.banner {
+  margin: 0 auto;
+  padding: 96px 0;
+  color: white;
+  background-size: cover;
+}
+
+.footer {
+  text-align: center;
+  padding: 16px;
+  background-color: #192b26;
+  color: rgb(230, 230, 230);
+}
+
+
+.row {
+  margin: 24px 0;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 400px;
+  margin: 32px;
+  transition: all .3s;
+
+  h3, h6 {
+    color: white;
+    font-weight: 400;
+  }
+
+  &:hover {
+   box-shadow: 0 0 4px 8px rgba(207, 178, 176, .3);
+   transform: scale(1.01);
+
+   h3, h6 {
+    font-weight: bold;
+   }
+  }
+}
+
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+.container-form {
+  margin: 72px 120px;
+}
+
+.card-show {
+  display: flex;
+  height: 300px;
+  width: 400px;
+  margin: 32px;
+}
+
+.container-r {
+  padding: 8px;
+}
+
+.container-reviews {
+  height: 100px;
+  overflow-y: scroll;
+}
