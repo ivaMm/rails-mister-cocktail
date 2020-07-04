@@ -14,15 +14,16 @@
             </li>
           <% end %>
         </ul>
-        <%= link_to "Add dose",  new_cocktail_dose_path(@cocktail) %>
+        <%= link_to "Add dose",  new_cocktail_dose_path(@cocktail), class: "btn-green" %>
         <hr>
         <% if @cocktail.reviews.empty? %>
           <p>No reviews yet, write one ↙️ </p>
         <% else %>
          <h4>Average rating:  <%= "⭐" * (Review.where(cocktail_id: @cocktail.id).average(:rating)).round %></h4>
-         <%= link_to "All Reviews", cocktail_reviews_path(@cocktail)%>
+         <br>
+         <%= link_to "All Reviews", cocktail_reviews_path(@cocktail), class: "btn-pink" %>
         <% end %>
-        <%= link_to 'Add Review', new_cocktail_review_path(@cocktail) %>
+        <%= link_to 'Add Review', new_cocktail_review_path(@cocktail), class: "btn-green" %>
       </div>
     </div>
   </div>

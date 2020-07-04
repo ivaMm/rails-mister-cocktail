@@ -1,6 +1,6 @@
-<div class="container">
-  <h1><%= link_to @cocktail.name, cocktail_path(@cocktail) %> </h1>
-  <%= link_to 'Add new Review', new_cocktail_review_path(@cocktail), class: "btn btn-outline-primary" %>
+<div class="container-reviews">
+  <h1  class="brand"><%= link_to @cocktail.name, cocktail_path(@cocktail)%> </h1>
+  <%= link_to 'Add new review', new_cocktail_review_path(@cocktail), class: "btn-green" %>
   <% @cocktail.reviews.each do |review| %>
     <div class="row">
       <div class="col-sm-6">

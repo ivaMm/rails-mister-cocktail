@@ -1,47 +1,23 @@
 // Specific CSS for your home-page
+body {
+  background-color: rgb(220, 220,220);
+}
 .banner {
   margin: 0 auto;
-  padding: 96px 0;
+  padding: 80px 0;
   color: white;
   background-size: cover;
 }
 
 .footer {
   text-align: center;
-  padding: 16px;
-  background-color: #192b26;
-  color: rgb(230, 230, 230);
+  padding-top: 4px;
+  color: white;
 }
 
-
-.row {
-  margin: 24px 0;
+.footer .fas.fa-heart {
+  color: #ed39af;
 }
-
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-  width: 400px;
-  margin: 32px;
-  transition: all .3s;
-
-  h3, h6 {
-    color: white;
-    font-weight: 400;
-  }
-
-  &:hover {
-   box-shadow: 0 0 4px 8px rgba(207, 178, 176, .3);
-   transform: scale(1.01);
-
-   h3, h6 {
-    font-weight: bold;
-   }
-  }
-}
-
 
 a:hover, a:visited, a:link, a:active {
   text-decoration: none;
@@ -51,18 +27,40 @@ a:hover, a:visited, a:link, a:active {
   margin: 72px 120px;
 }
 
-.card-show {
-  display: flex;
-  height: 300px;
-  width: 400px;
-  margin: 32px;
+.brand a {
+  color: #ed39af;
+  font-weight: bold;
 }
 
-.container-r {
-  padding: 8px;
+.brand a:hover {
+  color: #e874c0;
 }
 
-.container-reviews {
-  height: 100px;
-  overflow-y: scroll;
+.btn-pink {
+  color: #e874c0;
+  padding: 6px 16px;
+  margin: 0 8px;
+  border-radius: 2px;
+  background-color: transparent;
+  border: 1px solid #e874c0;
 }
+
+.btn-pink:hover {
+  background-color: #e874c0;
+  color: rgb(20,20,20);
+}
+
+.btn-green {
+  color: #398034;
+  padding: 6px 16px;
+  margin: 0 8px;
+  border-radius: 2px;
+  background-color: transparent;
+  border: 1px solid #398034;
+}
+
+.btn-green:hover {
+  background-color: #398034;
+  color: rgb(20,20,20);
+}
+

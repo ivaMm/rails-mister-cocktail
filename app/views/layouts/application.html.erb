@@ -12,23 +12,12 @@
   </head>
 
   <body>
-
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
     </div>
-
-    <div class="navbar bg-dark">
-      <h1><%= link_to 'Cocktails', root_path %></h1>
-      <div class="ml-auto flex">
-        <%= form_tag(root_path, :method => "get", :controller => "cocktails", :class => "form-inline my-2 my-lg-0") do %>
-         <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search by name" aria-label="Search" value="<%= params[:query] %>">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        <% end %>
-      </div>
-      <%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-outline-primary my-2 my-sm-0 ml-2" %>
-   </div>
-   <%= yield %>
+    <%= render 'shared/navbar' %>
+    <%= yield %>
   </body>
-  <div class="footer bg-dark">
+  <div class="footer fixed-bottom bg-dark">
     <p>This app is built with <i class="fas fa-heart"></i></p>
   </div>
 </html>

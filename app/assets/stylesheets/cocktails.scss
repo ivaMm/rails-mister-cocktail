@@ -1,18 +1,13 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
-.row {
-  margin: 24px 0;
-}
-
 .card {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
-  width: 400px;
-  margin: 32px;
+  height: 320px;
+  width: 300px;
+  margin: 24px 32px;
   transition: all .3s;
 
   h3, h6 {
@@ -30,13 +25,8 @@
   }
 }
 
-
-a:hover, a:visited, a:link, a:active {
-  text-decoration: none;
-}
-
-.container-form {
-  margin: 72px 120px;
+.row {
+  margin: 24px 0 16px 0;
 }
 
 .card-show {
@@ -44,13 +34,4 @@ a:hover, a:visited, a:link, a:active {
   height: 300px;
   width: 400px;
   margin: 32px;
-}
-
-.container-r {
-  padding: 8px;
-}
-
-.container-reviews {
-  height: 100px;
-  overflow-y: scroll;
 }

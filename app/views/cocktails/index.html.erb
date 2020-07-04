@@ -4,7 +4,7 @@
       <% if @cocktails.empty? %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
           <h6>No results found for <strong><%= @query.upcase %></strong></h6>
-          <h4><%= link_to "Add cocktail", new_cocktail_path %></h4>
+          <h4><%= link_to "Add cocktail", new_cocktail_path, class: "btn-green" %></h4>
         </div>
       <% else %>
         <div class="container">
@@ -17,7 +17,7 @@
     <% end %>
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail) do %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 320, width: 300, crop: :fill %>')">
           <h3><%= cocktail.name %></h3>
           <% if cocktail.reviews.empty? %>
             <h6>No ratings yet</h6>
