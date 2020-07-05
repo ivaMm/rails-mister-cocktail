@@ -2,21 +2,18 @@
 body {
   background-color: rgb(220, 220,220);
 }
+
 .banner {
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 112px 0;
   color: white;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), asset-url('banner.png');
   background-size: cover;
-}
-
-.footer {
-  text-align: center;
-  padding-top: 4px;
-  color: white;
+  background-position: bottom;
 }
 
 .footer .fas.fa-heart {
-  color: #ed39af;
+  color: #db0259;
 }
 
 a:hover, a:visited, a:link, a:active {
@@ -28,31 +25,32 @@ a:hover, a:visited, a:link, a:active {
 }
 
 .brand a {
-  color: #ed39af;
+  color: #db0259;
   font-weight: bold;
 }
 
 .brand a:hover {
-  color: #e874c0;
+  color: #e64c89;
 }
 
 .btn-pink {
-  color: #e874c0;
+  color: #db0259;
   padding: 6px 16px;
   margin: 0 8px;
   border-radius: 2px;
   background-color: transparent;
-  border: 1px solid #e874c0;
+  border: 1px solid #db0259;
 }
 
 .btn-pink:hover {
-  background-color: #e874c0;
+  background-color: #db0259;
   color: rgb(20,20,20);
 }
 
 .btn-green {
   color: #398034;
-  padding: 6px 16px;
+  padding: 4px 16px;
+  font-weight: 600;
   margin: 0 8px;
   border-radius: 2px;
   background-color: transparent;

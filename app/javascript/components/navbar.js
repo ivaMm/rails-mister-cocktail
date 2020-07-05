@@ -1,5 +1,5 @@
 const initUpdateNavbarOnScroll = () => {
-  const navbar = document.querySelector(".navbar.bg-dark");
+  const navbar = document.querySelector(".navbar");
   if (navbar) {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > navbar.offsetTop) {
