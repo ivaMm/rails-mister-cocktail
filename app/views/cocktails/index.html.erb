@@ -23,7 +23,7 @@
             <h6>No ratings yet</h6>
           <% else %>
              <h6>Average rating:</h6>
-             <h3><%= "⭐" * (Review.where(cocktail_id: cocktail.id).average(:rating)).round %></h3>
+             <h3><%= "⭐" * cocktail.avg_rating %></h3>
           <% end %>
         </div>
       <% end %>

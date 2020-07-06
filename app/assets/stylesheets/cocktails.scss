@@ -35,3 +35,12 @@
 .container {
   padding: 24px;
 }
+
+.list {
+  height: 30%;
+  width: 80%;
+  overflow-y: scroll;
+  box-shadow: 0 0 3px 3px rgb(210,210,210);
+  padding: 8px 24px;
+  list-style: none;
+}
