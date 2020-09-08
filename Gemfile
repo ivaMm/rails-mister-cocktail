@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# search
+gem 'pg_search', '~> 2.3.0'
+
 # secret keys
 gem 'dotenv-rails', groups: [:development, :test]
 
