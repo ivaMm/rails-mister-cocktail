@@ -7,13 +7,12 @@
   <%= link_to 'Add new review', new_cocktail_review_path(@cocktail), class: "btn-green" %>
 </div>
   </div>
-  <% @cocktail.reviews.count == 1 ? sg_pl = "review" : sg_pl = "reviews" %>
-  <h4>This cocktail has <%= @cocktail.reviews.count %> <%= sg_pl %> : </h4>
+  <h4>This cocktail has <%= pluralize @cocktail.reviews.size, 'review' %> : </h4>
   <hr>
   <% @cocktail.reviews.order(created_at: :desc).each do |review| %>
     <div class="row">
       <div class="col-sm-6">
-        <strong><%= review.created_at.to_a[3..5].join(". ") %>.</strong>
+        <strong><%= review.created_at.strftime("%d. %B, %Y.") %></strong>
         <br>
         <%= review.content %>
       </div>

@@ -3,7 +3,7 @@ class CocktailsController < ApplicationController
   def index
     if params[:query].present?
       @query = params[:query]
-      @cocktails = Cocktail.where("name ilike ?", "%#{params[:query]}%")
+      @cocktails = Cocktail.where("name ilike ?", "%#{@query}%")
     else
       @cocktails = Cocktail.all.order("created_at desc")
     end

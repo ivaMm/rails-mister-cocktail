@@ -9,8 +9,7 @@
       <% else %>
         <div class="container">
           <div class="row justify-content-sm-center">
-            <% @cocktails.count == 1 ? sg_pl = "cocktail" : sg_pl = "cocktails" %>
-            <h6>Found <%= @cocktails.count %> <%= sg_pl %> for <strong><%= @query.upcase %></strong> out of <%= Cocktail.count %> </h6>
+            <h6>We found <%= pluralize @cocktails.size, 'cocktail' %> for <strong><%= @query.upcase %></strong> out of <%= Cocktail.count %> </h6>
           </div>
         </div>
       <% end %>
